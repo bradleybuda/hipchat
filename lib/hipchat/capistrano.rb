@@ -26,6 +26,7 @@ Capistrano::Configuration.instance(:must_exist).load do
 
         message = "#{human} is deploying #{application}"
         message << " at #{repository}"
+        message << "-#{branch}" if branch
         message << " to #{rails_env}"
         message << " (with migrations)" if hipchat_with_migrations
         message << "."
